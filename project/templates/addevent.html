@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %} New Event {% endblock %} 
+{% block content %}
+<div class="" tabindex="-1" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-c">
+        <h5 class="text-center">New Event</h5>
+      </div>
+      <div class="modal-body">
+        <form action="{% url 'event:add-event' %}"  enctype="multipart/form-data" method="post">
+          {% csrf_token %} {{ form.as_p }}
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

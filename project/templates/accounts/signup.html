@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block title %} Create Account {% endblock %} {% block content %}
+<div class="" tabindex="-1" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-c">
+        <h5 class="text-center">Create Account</h5>
+      </div>
+      <div class="modal-body">
+        <form action="{% url 'accounts:signup' %}" method="post">
+          {% csrf_token %} {{ form.as_p }}
+          <div id="passwordHelpBlock" class="form-text mb-3">
+           <strong class="text-danger text-decoration-underline">Note</strong>:- Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces or emoji.
+          </div>
+          <button class="btn btn-primary" type="submit">Create Account</button>
+        </form>
+        <hr />
+        <p class="text-center">
+          Already have an account?
+          <btn
+            style="cursor: pointer"
+            type="button"
+            class="text-primary text-decoration-none">
+            <a href="{% url 'accounts:login' %}">Login</a></btn >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
