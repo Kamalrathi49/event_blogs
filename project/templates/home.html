@@ -16,13 +16,17 @@
     {% if events %}
       {% for event in events %}
         <div class="card border border-secondary">
+          {% if event.image %}
             <img class="p-1" src="{{ event.image.url }}" alt="">
-            <div class="card-body">
+            {% else %}
+            <img class="p-1" src="https://upload.wikimedia.org/wikipedia/commons/2/26/512pxIcon-sunset_photo_not_found.png" alt="">
+            {% endif %}
+            <div class="card-body  ">
                 <p class="text-date">By {{ event.creater }} / {{ event.date }}</p>
                 <div class="line"></div>
                   <p class="text">{{ event.event_name }}</p>
                 </div>
-                <btn class="reaction-btn p-2 pt-0"><ion-icon size="large" name="heart-outline"></ion-icon></btn>
+                <btn class="reaction-btn pb-2" style="padding-right: 12px;"><ion-icon name="heart-circle"></ion-icon></btn>
         </div>
         {% endfor %}
     {% else %}

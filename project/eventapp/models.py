@@ -13,7 +13,7 @@ class Event(models.Model):
     date = models.CharField(max_length=20)
     time = models.CharField(max_length=20)
     location = models.CharField(max_length=199) 
-    image = models.ImageField( blank=True, null=True, upload_to="images/")
+    image = models.ImageField(blank=True, null=True, upload_to="images/")
     is_liked = models.CharField(max_length=6, choices=reaction, null=True, blank=True, default='False')
     creater = models.ForeignKey(User, on_delete=models.CASCADE, related_name='creater')
 

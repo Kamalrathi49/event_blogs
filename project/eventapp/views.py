@@ -6,7 +6,6 @@ from django.contrib.auth.decorators import login_required
 
 def home(request):
     events = Event.objects.all()
-    print("------------event------", events)
     ctx = {'events':events}
     return render(request, 'home.html', ctx)
 
