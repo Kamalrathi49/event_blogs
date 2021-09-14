@@ -9,6 +9,11 @@ def home(request):
     ctx = {'events':events}
     return render(request, 'home.html', ctx)
 
+def MyEvent(request, creater_id):
+    myevents = Event.objects.filter( creater__id = creater_id)
+    ctx = {'myevents': myevents}
+    return render(request, 'my_post.html', ctx)
+
 @login_required
 def AddEvent(request):
     if request.method  == 'POST':

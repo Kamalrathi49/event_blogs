@@ -117,7 +117,6 @@ body{
 .reaction-btn {
    display: flex;
    justify-content: end;
-   
 }
 
 .add-event {
@@ -134,9 +133,12 @@ ion-icon {
     font-size: 26px;
     cursor: pointer;
     border-radius: 100%;
-  }
+}
 
-/* ion-icon:hover {
-    color: white;
-    background-color: red;
-  } */
+.liked {
+    color: red;
+}
+
+.unliked {
+    color: black;
+}

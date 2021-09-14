@@ -8,6 +8,7 @@ app_name = 'event'
 urlpatterns = [
     path('', home, name='home'),
     path('event/', AddEvent, name='add-event'),
+    path('my-event/<int:creater_id>/', MyEvent, name='my-event'),
 ]
 
 if settings.DEBUG:
