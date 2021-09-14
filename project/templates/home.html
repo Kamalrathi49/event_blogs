@@ -22,7 +22,7 @@
             <img class="p-1" src="https://upload.wikimedia.org/wikipedia/commons/2/26/512pxIcon-sunset_photo_not_found.png" alt="">
             {% endif %}
             <div class="card-body  ">
-                <p class="text-date">By {% if event.creater == request.user %} You  {% else %} {{ event.creater }} {% endif %}  / {{ event.date }}</p>
+                <p class="text-date">By {% if event.creater == request.user %} <strong>You</strong> {% else %} <strong>{{ event.creater }}</strong> {% endif %}  /  {{ event.date }} - {{ event.time }}</p>
                 <div class="line"></div>
                   <p class="text">{{ event.event_name }}</p>
                 </div>

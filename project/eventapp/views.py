@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .forms import *
 from django.contrib.auth.decorators import login_required
+from .models import *
 # Create your views here.
 
 
@@ -9,6 +10,7 @@ def home(request):
     ctx = {'events':events}
     return render(request, 'home.html', ctx)
 
+@login_required
 def MyEvent(request, creater_id):
     myevents = Event.objects.filter( creater__id = creater_id)
     ctx = {'myevents': myevents}
